@@ -1,3 +1,9 @@
+# INFORMAÇOES IMPORTANTES
+- Estou fazendo este desafio para fins de conhecimento e testar minhas capacidades;
+- Não tenho a intenção de infirngir qualquer direito autoral
+- Para o desenvolvimento deste projeto sera utilizado como linguagem o `Java` e como framework o `Spring Boot`
+
+
 # Desafio Técnico
 ## Objetivo
 No cooperativismo, cada associado possui um voto e as decisões são tomadas em assembleias, por votação. A partir disso, você precisa criar uma solução back-end para gerenciar essas sessões de votação. Essa solução deve ser executada na nuvem e promover as seguintes funcionalidades através de uma API REST:
@@ -32,22 +38,3 @@ Imagine que sua aplicação possa ser usada em cenários que existam centenas de
 
 #### Tarefa Bônus 4 - Versionamento da API
 Como você versionaria a API da sua aplicação? Que estratégia usar?
-
-### O que será analisado
-- Simplicidade no design da solução (evitar over engineering)
-- Organização do código
-- Arquitetura do projeto
-- Boas práticas de programação (manutenibilidade, legibilidade etc)
-- Possíveis bugs
-- Tratamento de erros e exceções
-- Explicação breve do porquê das escolhas tomadas durante o desenvolvimento da solução
-- Uso de testes automatizados e ferramentas de qualidade
-- Limpeza do código
-- Documentação do código e da API
-- Logs da aplicação
-- Mensagens e organização dos commits
-
-### Observações importantes
-- Não inicie o teste sem sanar todas as dúvidas
-- Iremos executar a aplicação para testá-la, cuide com qualquer dependência externa e deixe claro caso haja instruções especiais para execução do mesmo
-- Teste bem sua solução, evite bugs
