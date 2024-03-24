@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    on-profile: test
+  datasource:
+    username: votacao
+    url: jdbc:postgresql://localhost:5432/votacao
+    password: votacao#123321
+  jpa:
+    properties:
+      show-sql: true
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: true

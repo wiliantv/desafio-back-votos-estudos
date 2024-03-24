@@ -3,6 +3,9 @@
 - Não tenho a intenção de infirngir qualquer direito autoral
 - Para o desenvolvimento deste projeto sera utilizado como linguagem o `Java` e como framework o `Spring Boot`
 
+## Solução do Desafio
+1. Rotas para gestao(Cadastro, alteração, listagem e exclusão) de pauta ``/api/pauta``
+
 
 # Desafio Técnico
 ## Objetivo

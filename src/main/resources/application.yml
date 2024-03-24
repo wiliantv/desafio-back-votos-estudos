@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: ${APP_PROFILE:dev}
+security:
+  basic:
+    enabled: false
+
+springdoc:
+  api-docs:
+    path: /api-docs
+logging:
+  pattern:
+    console: "[%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p}] %m%n"
