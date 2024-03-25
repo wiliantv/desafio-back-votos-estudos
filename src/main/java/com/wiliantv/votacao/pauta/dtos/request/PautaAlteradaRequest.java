@@ -1,6 +1,6 @@
-package com.wiliantv.Votacao.pauta.dtos.request;
+package com.wiliantv.votacao.pauta.dtos.request;
 
-import com.wiliantv.Votacao.pauta.Pauta;
+import com.wiliantv.votacao.pauta.Pauta;
 import lombok.Data;
 
 @Data

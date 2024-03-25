@@ -1,6 +1,5 @@
-package com.wiliantv.Votacao.pauta;
+package com.wiliantv.votacao.pauta;
 
-import com.wiliantv.Votacao.pauta.Pauta;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PautaRepository extends JpaRepository<Pauta, Long> {

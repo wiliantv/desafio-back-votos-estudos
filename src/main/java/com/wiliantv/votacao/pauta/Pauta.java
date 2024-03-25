@@ -1,4 +1,4 @@
-package com.wiliantv.Votacao.pauta;
+package com.wiliantv.votacao.pauta;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

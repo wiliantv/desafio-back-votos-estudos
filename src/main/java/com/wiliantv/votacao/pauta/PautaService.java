@@ -1,11 +1,10 @@
-package com.wiliantv.Votacao.pauta;
+package com.wiliantv.votacao.pauta;
 
-import com.wiliantv.Votacao.pauta.dtos.request.PautaAlteradaRequest;
-import com.wiliantv.Votacao.pauta.dtos.request.PautaRequest;
-import com.wiliantv.Votacao.pauta.dtos.response.PautaResponse;
+import com.wiliantv.votacao.pauta.dtos.request.PautaAlteradaRequest;
+import com.wiliantv.votacao.pauta.dtos.request.PautaRequest;
+import com.wiliantv.votacao.pauta.dtos.response.PautaResponse;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
-import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,11 +13,12 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 @Service
 public class PautaService {
-    private PautaRepository repository;
-    private final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+    private final PautaRepository repository;
+    private final Validator validator;
 
-    public PautaService(PautaRepository repository) {
+    public PautaService(PautaRepository repository, Validator validator) {
         this.repository = repository;
+        this.validator = validator;
     }
 
     public PautaResponse create(PautaRequest pautaRequest) {
@@ -27,10 +27,8 @@ public class PautaService {
     }
 
     public PautaResponse update(Long id, PautaAlteradaRequest pautaRequest) {
-
         Pauta pauta = getById(id);
-        pautaRequest.toEntity(pauta);
-        return new PautaResponse(save(pauta));
+        return new PautaResponse(pautaRequest.toEntity(pauta));
     }
 
 
@@ -52,5 +50,10 @@ public class PautaService {
     }
     public PautaResponse findById(Long id) {
         return new PautaResponse(getById(id));
+    }
+
+    public void delete(Long id) {
+        Pauta entity = getById(id);
+        repository.delete(entity);
     }
 }

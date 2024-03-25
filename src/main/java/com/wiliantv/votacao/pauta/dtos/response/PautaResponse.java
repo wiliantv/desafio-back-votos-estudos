@@ -1,6 +1,6 @@
-package com.wiliantv.Votacao.pauta.dtos.response;
+package com.wiliantv.votacao.pauta.dtos.response;
 
-import com.wiliantv.Votacao.pauta.Pauta;
+import com.wiliantv.votacao.pauta.Pauta;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

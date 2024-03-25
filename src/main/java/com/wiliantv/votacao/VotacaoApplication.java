@@ -1,4 +1,4 @@
-package com.wiliantv.Votacao;
+package com.wiliantv.votacao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
