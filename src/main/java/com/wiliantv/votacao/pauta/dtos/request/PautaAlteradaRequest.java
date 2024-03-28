@@ -8,7 +8,8 @@ public class PautaAlteradaRequest {
     private String descricao;
     private String proposta;
 
-    public Pauta toEntity(Pauta pauta) {
+    public Pauta toEntity() {
+        Pauta pauta= new Pauta();
         pauta.setDescricao(getDescricao());
         pauta.setProposta(getProposta());
         return pauta;

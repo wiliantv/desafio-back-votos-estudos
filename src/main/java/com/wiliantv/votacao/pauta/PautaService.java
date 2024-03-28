@@ -1,5 +1,6 @@
 package com.wiliantv.votacao.pauta;
 
+import com.wiliantv.votacao.exceptions.ObjectNotFoundException;
 import com.wiliantv.votacao.pauta.dtos.request.PautaAlteradaRequest;
 import com.wiliantv.votacao.pauta.dtos.request.PautaRequest;
 import com.wiliantv.votacao.pauta.dtos.response.PautaResponse;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+
 @Service
 public class PautaService {
     private final PautaRepository repository;
@@ -27,27 +29,32 @@ public class PautaService {
     }
 
     public PautaResponse update(Long id, PautaAlteradaRequest pautaRequest) {
-        Pauta pauta = getById(id);
-        return new PautaResponse(pautaRequest.toEntity(pauta));
+        return new PautaResponse(update(id, pautaRequest.toEntity()));
     }
 
+    public Pauta update(Long id, Pauta pautaRequest) {
+        Pauta pauta = getById(id);
+        pauta.updateChanges(pautaRequest);
+        return save(pauta);
+    }
 
 
     public Page<PautaResponse> findAll(Pageable pageable) {
         return repository.findAll(pageable).map(PautaResponse::new);
     }
 
-    public Pauta save(Pauta pauta) {
+    private Pauta save(Pauta pauta) {
         Set<ConstraintViolation<Pauta>> validate = validator.validate(pauta);
         if (!validate.isEmpty()) {
-            throw new ConstraintViolationException(validate);
+            throw new ConstraintViolationException("Erro o validar os campos", validate);
         }
         return repository.save(pauta);
     }
 
     public Pauta getById(Long id) {
-        return repository.findById(id).orElseThrow(() -> new RuntimeException("Pauta não encontrada"));
+        return repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Pauta não encontrada"));
     }
+
     public PautaResponse findById(Long id) {
         return new PautaResponse(getById(id));
     }
