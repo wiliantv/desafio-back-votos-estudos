@@ -1,6 +1,7 @@
 package com.wiliantv.votacao.pauta.sessao;
 
 import com.wiliantv.votacao.pauta.Pauta;
+import com.wiliantv.votacao.pauta.sessao.votos.Votos;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -9,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -23,7 +25,7 @@ public class Sessao {
     @Size(min = 3, max = 100)
     @Column(nullable = false)
     private String nome;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pauta_id", nullable = false)
     @NotNull
     private Pauta pauta;
@@ -33,6 +35,9 @@ public class Sessao {
     @Column(nullable = false)
     @NotNull
     private LocalDateTime dataHoraFim;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Votos> votos;
 
 
     public Sessao(UUID id) {
