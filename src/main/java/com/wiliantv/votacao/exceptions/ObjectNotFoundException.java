@@ -1,7 +1,7 @@
 package com.wiliantv.votacao.exceptions;
 
 @SuppressWarnings("ALL")
-public class ObjectNotFoundException extends RuntimeException{
+public class ObjectNotFoundException extends Generic4XXException {
 
     public ObjectNotFoundException() {
     }

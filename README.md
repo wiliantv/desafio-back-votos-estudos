@@ -4,7 +4,8 @@
 - Para o desenvolvimento deste projeto sera utilizado como linguagem o `Java` e como framework o `Spring Boot`
 
 ## Solução do Desafio
-1. Rotas para gestao(Cadastro, alteração, listagem e exclusão) de pauta ``/api/pauta``
+1. Acesso a documentação via swagger ``/swagger-ui/index.html#``
+2. A solução foi feita por etapas, sendo o desenvolvimento das rotas referentes a pauta, referentes as sessoes e referentes aos votos e estao levando em conta algumas validaçoes especificas 
 
 
 # Desafio Técnico

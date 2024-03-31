@@ -1,9 +1,13 @@
 package com.wiliantv.votacao.pauta.dtos.request;
 
 import com.wiliantv.votacao.pauta.Pauta;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class PautaRequest {
     private String titulo;
     private String descricao;
